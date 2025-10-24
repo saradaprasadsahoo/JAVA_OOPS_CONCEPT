@@ -1,0 +1,10 @@
+What is interface in java?
+ans-Interface is a blue print of a class, It is used to achive abstraction and multiple inheritance.
+key points :-
+1.Defined useing interface key word.
+2.It can contain abstract method , Static method , default method and from java 1.9 version it contain private method.
+3.A class implements interface to provide method bodies.
+4. Variable inside interface public, Static and final by default.
+
+JAVA 8 FEATURES OF INTERFACE :-
+Before java 8 features interface have only contain abstract method or constats.
