@@ -1,0 +1,82 @@
+what is default method in interface ?
+ans- From java 1.8 version Interface have Default method, you can define a method with body with default keyword.
+-> purpose is to add new functionality in the interface without breaking the existing implimention.
+  example - 
+    interface Vehicle {
+    void start();
+
+    default void honk() {
+        System.out.println("Beep Beep!");
+    }
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car started");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.start();
+        c.honk(); // Output: Beep Beep!
+    }
+}
+
+2.STATIC METHODS:-
+Interfaces can now contain static methods (with a body).
+Utility or helper methods related to the interface.
+ Example-interface MathUtil {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(MathUtil.add(5, 10)); // Output: 15
+    }
+}
+
+
+ 
+2.JAVA 1.9 FEATURES IN INTERFACE-
+ou can now define private and private static methods inside an interface.
+Purpose: To avoid code duplication inside default and static methods.
+interface MyInterface {
+    default void show() {
+        displayMessage();
+    }
+
+    default void print() {
+        displayMessage();
+    }
+
+    private void displayMessage() {
+        System.out.println("Hello from private method");
+    }
+}
+
+public class Main implements MyInterface {
+    public static void main(String[] args) {
+        new Main().show();
+    }
+}
+
+
+bstract Methods	      Java 1.0	 Only method signature	void run();
+Default Methods	      Java 8	   Method with body	default void run() {}
+Static Methods	      Java 8	   Static helper methods	static void run() {}
+Private Methods	      Java 9	   Code reuse inside interface	private void helper() {}
+Functional Interfaces	Java 8	   One abstract method	@FunctionalInterface
+
+
+
+                                                     
+
+                               
+
+
+
+
