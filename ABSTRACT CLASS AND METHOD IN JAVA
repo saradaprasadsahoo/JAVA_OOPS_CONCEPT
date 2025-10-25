@@ -1,0 +1,95 @@
+What is abstract in java ?
+Abstract is a non-access modifier in java used in 
+*class
+*method
+
+it is used for hideing the implementation and provide only necesarry implimention for the blue print.
+ Abstract class in java :-
+         we can create a abstract class useing declare the keyword abstract. we can't create the oject of the abstract class.
+ it contain abstract method without body.
+ and contain concrete method with body.
+and contain constructor , variables and static method or blocks.
+
+example is 
+abstract class Animal {
+    abstract void makeSound();  // abstract method
+
+    void sleep() {              // concrete method
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Animal a = new Animal();  //Not allowed
+        Animal dog = new Dog();     //  Allowed (polymorphism)
+        dog.makeSound();           // Output: Bark!
+        dog.sleep();              // Output: Sleeping...
+    }
+}
+
+
+ABSTRACT METHOD:-
+Abstract method is declard with abstract keyword and the method contain without any implementation mean no body ,it must be implented body in child class.
+abstract class Vehicle {
+    abstract void start();
+
+    void fuel() {
+        System.out.println("Vehicle needs fuel.");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with a key.");
+    }
+}
+
+class Bike extends Vehicle {
+    void start() {
+        System.out.println("Bike starts with a button.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        v1.start();   // Car starts with a key.
+
+        Vehicle v2 = new Bike();
+        v2.start();   // Bike starts with a button.
+    }
+}
+
+
+Why we use abstract class and abstract method :-
+we can achive partial abstraction.
+it is use in API's and framework
+To provide common code to all subclasses
+
+ SOME IMPOTRANT QUESTION IN ABSTRACTION:-
+
+Can abstract class have a constructor?
+➤ Yes, it can, but cannot be called directly — only via subclass.
+
+Can abstract class have a main() method?
+➤ Yes, it can — but it cannot be instantiated.
+
+Can an abstract method be static or final?
+➤ No — it must be overridden.
+
+Can we declare an abstract class without any abstract method?
+➤ Yes, possible. It just can’t be instantiated.
+
+Difference between abstract class and interface (Java 8+)?
+➤ Interface can now have default and static methods, reducing the gap.
+
+Can we make a method abstract and private?
+➤ No — because private methods cannot be overridden.
+
