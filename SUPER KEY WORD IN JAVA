@@ -1,0 +1,69 @@
+WGAAT IS SUPER KEYWORD IN JAVA ?
+ANS- The super keyword in java is a referance variable is reffer to the immediate parent class object.
+It mainly used in inhertance -
+1.To acess variable.
+2.To acess method.
+3.to acess constructor.
+
+
+1.USEING SUPER TO REFER THE VARIABLE :-
+When the subclass has a varable with the same name as parents class,super is used to acess the parents class variable.
+class Parent {
+    int num = 100;
+}
+
+class Child extends Parent {
+    int num = 200;
+
+    void display() {
+        System.out.println("Child num: " + num); // 200
+        System.out.println("Parent num: " + super.num); // 100
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.display();
+    }
+}
+
+
+2. Using super to call parent class methods
+If the child class overrides a method from the parent class, you can still call the parent class version using super.methodName().
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+    void display() {
+        super.sound(); // calls parent method
+        sound();       // calls child method
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {                     //Animal makes sound
+        Dog d = new Dog();                                      //Dog barks
+        d.display();
+    }
+}
+
+3. Using super to call parent class constructor
+
+When you create a subclass object, the parent constructor is always called first.
+You can explicitly call a specific parent constructor using super().
+
+Important Rules of super
+super() must be the first line in the subclass constructor if used.
+You cannot use super in static methods, because super refers to an instance.
+super can be used only inside a subclass.
+If you don’t explicitly call super(), Java automatically inserts a default super() to call the parent’s no-arg constructor.
+
+
