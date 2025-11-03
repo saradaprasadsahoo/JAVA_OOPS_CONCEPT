@@ -1,0 +1,72 @@
+What is encapdulation in java ?
+it is the 4 main oops concept in java along with abstraction and inhertance interface.
+
+Encapsulation mean binding the data and method that operats on that data single unit in a class.
+and restricting acess to the data outside of the class.
+
+main idea:-
+Encapsulation = Data hiding + data protection.
+
+you can hide the variable useing private access modifier and provide controlled assecc through getters and setters.
+ class Student {
+    // Step 1: Private data members (data hiding)
+    private String name;
+    private int age;
+
+    // Step 2: Public getter method (read access)
+    public String getName() {
+        return name;
+    }
+
+    // Step 3: Public setter method (write access)
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        // Example of controlled access
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("Age must be positive!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        // Access data only through methods
+        s.setName("Sarada");
+        s.setAge(22);
+
+        System.out.println("Name: " + s.getName());
+        System.out.println("Age: " + s.getAge());
+    }
+}
+How to use Encapsulation
+Declare variables as private → They can’t be accessed directly from outside.
+Use public getter and setter methods → Allow controlled access.
+Protects internal data → Prevents accidental or unauthorized modification.
+
+What is encapsulation?
+→ Encapsulation is the process of binding data and methods together and restricting direct access to data by making it private.
+
+Why is encapsulation important?
+→ It ensures data security, maintainability, and flexibility.
+
+How is encapsulation implemented in Java?
+→ Using private variables and public getter/setter methods.
+
+Can we achieve encapsulation without getters and setters?
+→ Partially yes (by using private data), but for full encapsulation, you must use getters and setters.
+
+Is encapsulation and data hiding the same?
+→ No, data hiding is part of encapsulation; encapsulation also includes bundling of data and behavior.
+
+
