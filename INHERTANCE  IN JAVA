@@ -1,0 +1,42 @@
+WhT is inhertance ?
+Inheritance is the core concept of oops.it is the mechanisim of acquire the 
+property or inherties the perporty and behaviour super class to sub class is called inheritance.
+it help the code reusebility and methhod over ridding and pollymorphisim.
+
+class Parent {
+    // parent class members
+}
+
+class Child extends Parent {
+    // child class members
+}
+here 
+parent - is called super class and parents class.
+child - is called derived class
+the key word extends is define the inheritance .
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();   // inherited from Animal
+        d.bark();  // defined in Dog
+    }
+}
+| Type                                          | Description                                                                                          | Example                                    |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| **Single Inheritance**                        | One class inherits another.                                                                          | `A → B`                                    |
+| **Multilevel Inheritance**                    | A class inherits another class which is already inherited from another.                              | `A → B → C`                                |
+| **Hierarchical Inheritance**                  | Multiple classes inherit a single parent class.                                                      | `A → B`, `A → C`                           |
+| **Multiple Inheritance (through interfaces)** | Java does **not** support multiple inheritance with classes, but supports it through **interfaces**. | `interface A, B → class C implements A, B` |
+
